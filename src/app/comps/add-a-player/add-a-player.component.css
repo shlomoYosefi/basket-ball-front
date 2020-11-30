@@ -1,0 +1,129 @@
+
+
+.note
+{
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+
+
+.form{
+    border: 5px solid rgb(248, 119, 13);
+    border-radius: 50%;
+    /* background: rgb(209, 238, 82); */
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+    height: 72vh;
+    background-image: url('/assets/image/backgroundLogIn.jpg');
+}
+
+input{
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #ffbc50;
+    color: #fff;
+    outline: none;
+
+}
+
+p{
+    font-size: larger;
+}
+
+option{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .box{
+    margin: auto;
+    margin-top: 15%;
+    width: 50%;
+    border: orange solid 2px;
+    text-align: center;
+}
+
+.img{
+    margin: 2%;
+    width: 50%;
+    height: 50px;
+}
+
+.name{
+    margin-left: 25%;
+    margin-top: 4%
+}
+
+.Player-position{
+    margin-left: 25%;
+    margin-top: 4%
+
+}
+.height{
+    margin-left: 25%;
+    margin-top: 4%;
+
+}
+.save{
+    margin-top: 4%;
+    margin-bottom: 4%;
+} */
+
+
+
+
+
+
+

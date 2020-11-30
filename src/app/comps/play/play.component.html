@@ -1,0 +1,344 @@
+<div class="container" style="position: relative;">
+    <div class="bacImg"
+        style=" background-image: url('assets/image/backgroundPlay.jpg')">
+    </div>
+
+    <div class="textOnImg">
+        <div class="all">
+            <h1 style="color: rgb(250, 131, 34); ">New game</h1>
+        </div>
+
+        <div class="box">
+            <div class='grup1'>
+                <div class="player-1">
+                    <div class="LocationImg" (click)='modalDisplay("block",0)'>
+                        <div id="spanImgGrup1Player0">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup1Player0" style="display: none;">
+                            <img src={{pointsPlayersGrup1[0].player.image}}>
+                        </div>
+                    </div>
+
+                    <div id="myModal0" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",0)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup1(i[0],0)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(1,0)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(1,0)'><b>V</b></button>&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[0].percentTo2}}%
+                            &nbsp;&nbsp;{{pointsPlayersGrup1[0].ok2}}/{{pointsPlayersGrup1[0].shootTo2}}</p>
+
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(1,0)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(1,0)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[0].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup1[0].ok3}}/{{pointsPlayersGrup1[0].shootTo3}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="player-2">
+                    <div class="LocationImg" (click)='modalDisplay("block",1)'>
+                        <div id="spanImgGrup1Player1">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup1Player1" style="display: none;">
+                            <img src={{pointsPlayersGrup1[1].player.image}}>
+                        </div>
+                    </div>
+                    <div id="myModal1" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",1)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup1(i[0],1)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(1,1)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(1,1)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[1].percentTo2}}%&nbsp;&nbsp;{{pointsPlayersGrup1[1].ok2}}/{{pointsPlayersGrup1[1].shootTo2}}
+                        </p>
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(1,1)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(1,1)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[1].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup1[1].ok3}}/{{pointsPlayersGrup1[1].shootTo3}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="player-3">
+                    <div class="LocationImg" (click)='modalDisplay("block",2)'>
+                        <div id="spanImgGrup1Player2">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup1Player2" style="display: none;">
+                            <img src={{pointsPlayersGrup1[2].player.image}}>
+                        </div>
+                    </div>
+                    <div id="myModal2" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",2)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup1(i[0],2)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(1,2)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(1,2)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[2].percentTo2}}%&nbsp;&nbsp;{{pointsPlayersGrup1[2].ok2}}/{{pointsPlayersGrup1[2].shootTo2}}
+                        </p>
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(1,2)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(1,2)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup1[2].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup1[2].ok3}}/{{pointsPlayersGrup1[2].shootTo3}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="percentTo2Grup1">
+                    <div style="display: flex;"><label
+                            style="color: rgb(247, 23, 23);"><b> All The Grup To 2:</b></label>&nbsp;&nbsp;&nbsp;<p>
+                            {{pointsGrup1.percentTo2}}%&nbsp;&nbsp;{{pointsGrup1.ok2}}/{{pointsGrup1.shootTo2}}</p>
+                    </div>
+                    <div style="display: flex;"><label
+                            style="color: rgb(247, 23, 23);"><b> All The Grup To 3:</b></label>&nbsp;&nbsp;&nbsp;<p>
+                            {{pointsGrup1.percentTo3}}%&nbsp;&nbsp;{{pointsGrup1.ok3}}/{{pointsGrup1.shootTo3}}</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="bord-result">
+                <div class="result">
+                    <div class="result-grup-1">
+                        {{resultGrup1}}
+                    </div>
+                    <div class="result-grup-2">
+                        {{resultGrup2}}
+                    </div>
+                </div>
+                <div class="time">
+                    <div style="display: flex; margin:auto;">
+                        <p id="min">{{minut}}</p>
+                        <p>:</p>
+                        <p id="sec">{{second}}</p>
+                    </div>
+                </div>
+                <div class="start-game">
+                    <button id="btStart" type="button" class="btn btn-success" (click)="start()">Start</button>
+                </div>
+                <div class="stopAndSave">
+                    <div class="save-game">
+                        <button type="button" class="btn btn-success" (click)='save()'>Save a game</button>
+                    </div>
+                    <div class="stop-game">
+                        <button type="button" class="btn btn-danger" (click)='finish()'>End of the  game</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class='grup2'>
+
+                <div class="player-0">
+                    <div class="LocationImg" (click)='modalDisplay("block",3)'>
+                        <div id="spanImgGrup2Player0">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup2Player0" style="display: none;">
+                            <img src={{pointsPlayersGrup2[0].player.image}}>
+                        </div>
+                    </div>
+                    <div id="myModal3" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",3)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup2(i[0],0)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(2,0)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(2,0)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[0].percentTo2}}%&nbsp;&nbsp;{{pointsPlayersGrup2[0].ok2}}/{{pointsPlayersGrup2[0].shootTo2}}
+                        </p>
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(2,0)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(2,0)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[0].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup2[0].ok3}}/{{pointsPlayersGrup2[0].shootTo3}}
+                        </p>
+
+                    </div>
+                </div>
+                <hr>
+
+                <div class="player-2">
+                    <div class="LocationImg" (click)='modalDisplay("block",4)'>
+                        <div id="spanImgGrup2Player1">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup2Player1" style="display: none;">
+                            <img src={{pointsPlayersGrup2[1].player.image}}>
+                        </div>
+                    </div>
+                    <div id="myModal4" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",4)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup2(i[0],1)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(2,1)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(2,1)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[1].percentTo2}}%&nbsp;&nbsp;{{pointsPlayersGrup2[1].ok2}}/{{pointsPlayersGrup2[1].shootTo2}}
+                        </p>
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(2,1)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(2,1)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[1].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup2[1].ok3}}/{{pointsPlayersGrup2[1].shootTo3}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="player-2">
+                    <div class="LocationImg" (click)='modalDisplay("block",5)'>
+                        <div id="spanImgGrup2Player2">
+                            <span style="font-size: 20px;">Add a player</span>
+                        </div>
+                        <div id="imgGrup2Player2" style="display: none;">
+                            <img src={{pointsPlayersGrup2[2].player.image}}>
+                        </div>
+                    </div>
+                    <div id="myModal5" class="modal" [style]='modal'>
+                        <div class="modal-content">
+                            <span class="close" (click)='modalDisplay("none",5)'>&times;</span>
+                            <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+                                <div class="pl" *ngFor='let i of arrAllPlayers' style="margin: 3%;"
+                                    (click)='addPlayerGrup2(i[0],2)'>
+                                    <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].name}}</p>
+                                    <img src={{i[0].image}}
+                                        style="width:100px;height:100px;" [style]='i[1]'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shoot-to-2" style="display: flex;">
+                        <button class="minus2" type="button" class="btn btn-danger"
+                            (click)='minus2(2,2)'><b>X</b></button>
+                        <p><b>shoot 2</b></p>
+                        <button class="plus2" type="button" class="btn btn-success"
+                            (click)='plus2(2,2)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[2].percentTo2}}%&nbsp;&nbsp;{{pointsPlayersGrup2[2].ok2}}/{{pointsPlayersGrup2[2].shootTo2}}
+                        </p>
+                    </div>
+                    <div class="shoot-to-3" style="display: flex;">
+                        <button class="minus3" type="button" class="btn btn-danger"
+                            (click)='minus3(2,2)'><b>X</b></button>
+                        <p><b>shoot 3</b></p>
+                        <button class="plus3" type="button" class="btn btn-success"
+                            (click)='plus3(2,2)'><b>V</b></button>&nbsp;&nbsp;&nbsp;
+                        <p>{{pointsPlayersGrup2[2].percentTo3}}%&nbsp;&nbsp;{{pointsPlayersGrup2[2].ok3}}/{{pointsPlayersGrup2[2].shootTo3}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="percentTo2Grup2">
+                    <div style="display: flex;"><label
+                            style="color: rgb(247, 23, 23);"><b> All The Grup To 2 :</b></label>&nbsp;&nbsp;&nbsp;<p>
+                            {{pointsGrup2.percentTo2}}%&nbsp;&nbsp;{{pointsGrup2.ok2}}/{{pointsGrup2.shootTo2}}</p>
+                    </div>
+                    <div style="display: flex;"><label
+                            style="color: rgb(247, 23, 23);"><b> All The Grup To 3:</b></label>&nbsp;&nbsp;&nbsp;<p>
+                            {{pointsGrup2.percentTo3}}%&nbsp;&nbsp;{{pointsGrup2.ok3}}/{{pointsGrup2.shootTo3}}</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

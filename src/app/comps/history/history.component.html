@@ -1,0 +1,261 @@
+<div class="container">
+
+  <div class="buttons" >
+    <div class="dropdown">
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Scoreboard
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <button class="dropdown-item" href="#" (click)='getAllResult()'>All results</button>
+        <button class="dropdown-item" href="#" (click)='modalDisplay("myModa2","block")'>By date</button>
+      </div>
+    </div>
+    <div class="dropdown2">
+      <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Statistics
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+        <button class="dropdown-item" href="#" (click)='modalDisplay("myModa","block")'>By player</button>
+        <button class="dropdown-item" href="#" (click)='modalDisplay("resultByGrup","block")'>By grup</button>
+      </div>
+    </div>
+  </div>
+
+<!-- 
+<div class="notResults" *ngIf='yes==0' style="text-align: center; color: red;">
+  <br><br><br>  <br><br><br><br><br><br>
+
+  <h2 style="font-size: 150px;">No results</h2>
+</div> -->
+
+
+
+
+  <div id="myModa" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" (click)='modalDisplay("myModa","none")'>&times;</span>
+      <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+        <div *ngFor='let i of arrAllPlayers' style="margin: 3%;cursor: pointer; " (click)='selectPlayer(i)'>
+          <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i.name}}</p>
+          <img src={{i.image}} style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultByGrup" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" (click)='modalDisplay("resultByGrup","none")'>&times;</span>
+      <h3 style="color: rgb(248, 126, 3); text-align: center;">Choose a group of 3 players</h3>
+      <div style="display: flex;  flex-direction: row; flex-wrap: wrap;">
+        <div *ngFor='let i of arrAllPlayersOfSelectGrup' style="margin: 3%;cursor: pointer;">
+          <div [style]='i[0].opacity' (click)='resultByGrup(i[0].player)'>
+            <p style="text-align: center; color: rgba(219, 91, 0, 0.794);">{{i[0].player.name}}</p>
+            <img src={{i[0].player.image}} style="width:100px;height:100px;">
+          </div>
+        </div>
+      </div>
+      <button style="margin: auto;" type="button" class="btn btn-success" (click)='nextResultGrup()'>next</button>
+    </div>
+  </div>
+
+
+
+  <div id="myModa2" class="modal" style="display: none;">
+    <div class="modal-content2">
+      <span class="close" (click)='modalDisplay("myModa2","none")'>&times;</span><br>
+      <div style="display: flex; flex-direction: column; text-align: center; color: orange;">
+        <label for="birthday">Choose a date</label>
+        <input #myDate type="date" id="birthday" name="birthday">
+        <input type="submit" (click)="date(myDate.value)" (click)='modalDisplay("myModa2","none")'>
+      </div>
+    </div>
+  </div><br><br><br>
+
+
+  <div id="cardFull" style="background: rgba(192, 192, 192, 0.897) ; display: none;">
+    <span class="close2" (click)='modalDisplay("cardFull","none")'>&times;</span>
+    <br><br>
+    <div id="card" style=" border: chocolate solid2px; margin-top: 3%; ">
+      <div class="img" style="display: flex; margin-left: 22%;  ">
+        <div style=" box-shadow: 5px 10px 8px #888888;">
+          <img src={{statisticPlayer.image}} style="width:434px;height:364px;">
+        </div>
+
+
+        <div style="margin-left: 2%; box-shadow: 5px 10px 8px #888888;">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">{{statisticPlayer.name}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">PlayerPosition</th>
+                <td>{{statisticPlayer.PlayerPosition}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Height</th>
+                <td>{{statisticPlayer.height}}m</td>
+              </tr>
+              <tr>
+                <th scope="row">PercentTo2</th>
+                <td>{{statisticPlayer.percentTo2}}%</td>
+              </tr>
+              <tr>
+                <th scope="row">PercentTo3</th>
+                <td>{{statisticPlayer.percentTo3}}%</td>
+              </tr>
+              <tr>
+                <th scope="row">Points</th>
+                <td>{{statisticPlayer.points}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div><br><br><br>
+
+    </div>
+  </div>
+
+
+  <div id="showTable" [style]="display"  >
+    <div *ngFor='let i of arrAllResults'>
+      <div style="text-align: center; display: flex; ">
+        <div class="date" style="margin: auto; border: black solid 0.5px">
+          <h6 style="color: rgb(253, 114, 0); "><b>date :{{i[0]["game"][0].date}}</b></h6>&nbsp;&nbsp;&nbsp;<h6
+            style="color: rgb(253, 114, 0); "><b>timeAPlay :{{i[0]["game"][0].time}}</b></h6>
+        </div>
+        <div class="grupAndResult" style="display: flex;  margin: auto; border: black solid 0.5px">
+          <div class="grup1" style="color: rgb(253, 114, 0);">
+            <b>{{i[0]["players"][0].name}}</b><br>
+            <b>{{i[1]["players"][0].name}}</b><br>
+            <b>{{i[2]["players"][0].name}}</b>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="result" style="margin-top: 2%; font-size: 36px;">
+            <b>{{i[0]["game"][0].result_g1}} : {{i[0]["game"][0].result_g2}}</b>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="grup2" style="color: rgb(253, 114, 0); ">
+            <b>{{i[3]["players"][0].name}}</b><br>
+            <b>{{i[4]["players"][0].name}}</b><br>
+            <b>{{i[5]["players"][0].name}}</b>
+          </div>
+
+        </div>
+      </div><br>
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Name a player</th>
+            <th scope="col">PercentTo2</th>
+            <th scope="col">PercentTo3</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{i[0]["players"][0].name}}</th>
+            <td>
+              {{i[0].ok2}}/{{i[0].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[0].percent2}}%
+            </td>
+            <td>
+              {{i[0].ok3}}/{{i[0].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[0].percent3}}%
+            </td>
+            <td>{{i[0].points}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{i[1]["players"][0].name}}</th>
+            <td>
+              {{i[1].ok2}}/{{i[1].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[1].percent2}}%
+            </td>
+            <td>
+              {{i[1].ok3}}/{{i[1].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[1].percent3}}%
+            </td>
+            <td>{{i[1].points}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{i[2]["players"][0].name}}</th>
+            <td>
+              {{i[2].ok2}}/{{i[2].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[2].percent2}}%
+            </td>
+            <td>
+              {{i[2].ok3}}/{{i[2].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[2].percent3}}%
+            </td>
+            <td>{{i[2].points}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{i[3]["players"][0].name}}</th>
+            <td>
+              {{i[3].ok2}}/{{i[3].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[3].percent2}}%
+            </td>
+            <td>
+              {{i[3].ok3}}/{{i[3].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[3].percent3}}%
+            </td>
+            <td>{{i[3].points}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{i[4]["players"][0].name}}</th>
+            <td>
+              {{i[4].ok2}}/{{i[4].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[4].percent2}}%
+            </td>
+            <td>
+              {{i[4].ok3}}/{{i[4].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[4].percent3}}%
+            </td>
+            <td>{{i[4].points}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{i[5]["players"][0].name}}</th>
+            <td>
+              {{i[5].ok2}}/{{i[5].to2}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[5].percent2}}%
+            </td>
+            <td>
+              {{i[5].ok3}}/{{i[5].to3}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[5].percent3}}%
+            </td>
+            <td>{{i[5].points}}</td>
+          </tr>
+        </tbody>
+      </table><br>
+      <hr><br>
+    </div>
+  </div>
+
+
+
+
+  <div id="resultsGrup" style="display: none;">
+    <div>
+      <div *ngFor='let i of arrResultsByGrup'>
+    <div style="text-align: center; border: rgb(149, 103, 16) solid; background: rgba(192, 192, 192, 0.897)"
+      >
+      
+      <h3 style="text-decoration: underline; color: rgb(179, 52, 6);">date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i[8]}}
+      </h3><br>
+
+      <div class="grupsAndResult" style="display: flex;">
+        <div class="grup1" style="margin-left: 34%;">
+          <p><b>{{i[0]}}</b></p>
+          <p><b>{{i[1]}}</b></p>
+          <p><b>{{i[2]}}</b></p>
+
+        </div>
+        <div class="result" style="margin-left: 8%; margin-right: 8%;">
+          <h2 style="margin-top: 35%; color: rgb(179, 52, 6);">{{i[6]}}&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{i[7]}}
+          </h2>
+        </div>
+        <div class="grup2">
+          <p><b>{{i[3]}}</b></p>
+          <p><b>{{i[4]}}</b></p>
+          <p><b>{{i[5]}}</b></p>
+        </div>
+      </div>
+    </div><br><br>
+    </div>
+  </div>
+</div>
+</div> 

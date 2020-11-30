@@ -1,0 +1,53 @@
+.note
+{
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+
+
+
+.form{
+    border: 5px solid rgb(248, 119, 13);
+    border-radius: 50%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+    height: 72vh;
+    background-image: url('/assets/image/backgroundLogIn.jpg') ;  
+
+}
+
+input{
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #ffbc50;
+    color: #fff;
+    outline: none;
+
+}
+
+p{
+    font-size: larger;
+}
+

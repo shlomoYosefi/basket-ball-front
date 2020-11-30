@@ -1,0 +1,52 @@
+.all{
+    text-align: center;
+    justify-content: center;
+}
+
+.allData{
+    display: flex;
+     justify-content: center;
+    text-align: center;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 30%;
+margin-top: 6%;
+
+}
+
+.explain{
+    width: 36%;
+margin-top: 6%;
+margin-right: 5%;
+}
+
+
+.header{
+    display: flex;
+    margin-top: 4%;
+    margin-left: 37%;
+    color: rgb(248, 92, 20);   
+}
+
+button{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 30%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+    margin: auto;
+
+}
+
+#header{
+    font-size: 100px;
+}

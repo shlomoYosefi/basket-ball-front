@@ -1,0 +1,109 @@
+<div class="container-sm">
+  <form class="form-signin" [formGroup]="addPlayer">
+  
+  <div class="container-register-form ">
+      <div class="form">
+  
+        <div class="note">
+          <p style="text-decoration: underline;">Add player</p>
+        </div><br><br>
+  
+        <div class="form-content">
+  
+          <div class="rishum">
+            <div class="Name">
+              <input type="text" #inputName formControlName='name' class="form-control" placeholder=" Name "
+                value="" />
+                <b><span  *ngIf='nameValid()' style="color: red;">{{nameSpan}}</span></b>
+
+            </div><br>
+  
+            <div class="form-group">
+              <input type="number" #inputHeight formControlName='Height' class="form-control"
+                placeholder="Height " value="" />
+            </div><br>
+            <b><span  *ngIf='heightValid()' style="color: red;">{{heightSpan}}</span></b>
+
+            <div>
+            <select id="select" #select style="width: 60%; ">
+              <option value="">Player Position</option>
+              <option value="Shooting Guard">Shooting Guard</option>
+              <option value="Small Forward">Small Forward</option>
+              <option value="Power Forward">Power Forward</option>
+              <option value="Center">Center</option>
+            </select>
+          </div><br>
+          <div>
+            <!-- <input #img placeholder="add image" /> -->
+            <input #image  type="file" (change)="onUpload(image)" />
+          </div>
+            
+  
+          </div>
+        </div><br><br><br>
+        <button type="button"  class="btnSubmit" (click)='save(inputName.value,inputHeight.value,select.value)'>save</button><br>
+  
+      </div>
+    </div>
+  </form>
+  <!-- <button style="background: red; border-radius: 50%; width: 25%; height: 250px">click me</button> -->
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="box">
+      <h1 style="text-decoration: underline;">add a player</h1>
+      <div class="img">
+        <label>add image</label>
+      </div>
+
+
+      <div class="name" style="display: flex;flex-direction: column;">
+        <label>name</label>
+        <input #name placeholder="name" style="width: 60%;"/>
+      </div>
+      <div class="Player-position" style="display: flex;flex-direction: column;">
+        <label>Player-position</label>
+        <select id="select" #select style="width: 60%;">
+          <option value="">Select</option>
+          <option value="Shooting Guard">Shooting Guard</option>
+          <option value="Small Forward">Small Forward</option>
+          <option value="Power Forward">Power Forward</option>
+          <option value="Center">Center</option>
+
+
+        </select>
+      </div>
+      <div class="height" style="display: flex;flex-direction: column;">
+        <label>height</label>
+        <input #height placeholder="height" style="width: 60%;"/>
+      </div>
+
+      <div class="save">
+   `  <button type="button" class="btn btn-success" (click)='save(name.value,height.value,select.value)'>save</button>
+      </div>
+
+    </div>
+  </div> -->

@@ -1,0 +1,65 @@
+.container{
+    background-image: url('/assets/image/backgroundShow.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+.all{
+    margin-top: 10%;
+    text-align: center;
+}
+  
+button{
+    font-size: 30px;
+    margin: auto;
+
+}
+
+.header{
+    font-size: 50px;
+    color:black
+}
+
+.buttons{
+    display: flex;
+}
+.bi{
+    font-size: 100px;
+}
+
+.button-add{
+    width: 20%;
+    height: 220px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1VzSUtVzobWeSh6O65cuU5Nec8_k_ajPBoA&usqp=CAU');
+    margin: auto;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.button-show{
+    width: 20%;
+    height: 220px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1VzSUtVzobWeSh6O65cuU5Nec8_k_ajPBoA&usqp=CAU');
+    margin: auto;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.button-history{
+    border-radius: 50%;
+    outline: none;
+    width: 20%;
+    height: 220px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1VzSUtVzobWeSh6O65cuU5Nec8_k_ajPBoA&usqp=CAU');
+    margin: auto;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#newGame{
+    margin-bottom: 5%;
+    box-shadow: 5px 10px 8px #888888;
+}
