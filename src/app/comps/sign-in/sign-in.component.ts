@@ -68,6 +68,8 @@ export class SignInComponent implements OnInit {
           alert('wrong username or password')
         }
         else {
+          console.log("shlomko");
+          
           localStorage.setItem('gurd', 'true')
           this.router.navigate(['/start'])
         }
