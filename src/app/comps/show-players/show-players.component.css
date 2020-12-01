@@ -1,9 +1,9 @@
-  .container{
-    background-image: url('/assets/image/backgroundShow.jpg');
-    background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  }
+.cont{
+  background-color: rgba(243, 229, 213, 0.829);
+  height: 100%;
+}
+  
+ 
   h1{
     color: rgb(7, 7, 6);
   }

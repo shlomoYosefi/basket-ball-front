@@ -1,4 +1,8 @@
-
+.cont{
+    background-color: rgba(243, 229, 213, 0.829);
+   min-height: 100vh;
+   height: 100%;
+}
 
 .note
 {
@@ -19,7 +23,7 @@
     border: 5px solid rgb(248, 119, 13);
     border-radius: 50%;
     /* background: rgb(209, 238, 82); */
-    margin-top: 7%;
+    /* margin-top: 7%; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;

@@ -1,4 +1,6 @@
-<div class="container" style="margin-top: 3%;" ><br>
+<div class="cont">
+
+<div class="container" ><br><br><br>
  
     <h1 style="text-decoration: underline; font-size: 70px; text-align: center;">List of players </h1><br><br>
     <div class="allCard" >
@@ -6,7 +8,7 @@
             <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img src={{i.image}} style="width:200px;height:230px; border: rgb(14, 13, 13) solid 3px;">
+                    <img src={{i.image}} style="width:200px;height:230px; ">
                   </div>
                   <div class="flip-card-back">
                     <h1 style="text-decoration: underline;">{{i.name}}</h1><br> <br>
@@ -15,7 +17,9 @@
                   </div>
                 </div>
               </div>
-              <br> <button type="button" class="btn btn-danger" style="border: rgb(14, 13, 13) solid 3px;" (click)='delete(i.id)'>Delete</button>
+              <br> <button type="button" class="btn btn-danger"  (click)='delete(i.id)'>Delete</button>
             </div>
     </div>
+</div>
+
 </div>

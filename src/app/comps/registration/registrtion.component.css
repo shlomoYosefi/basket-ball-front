@@ -1,3 +1,9 @@
+.cont{
+    background-color: rgba(243, 229, 213, 0.829);
+    height: 100vh;
+}
+
+
 .note
 {
     text-align: center;
@@ -17,7 +23,7 @@
 .form{
     border: 5px solid rgb(248, 119, 13);
     border-radius: 50%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;

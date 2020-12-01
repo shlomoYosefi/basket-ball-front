@@ -42,6 +42,13 @@ export class PlayComponent implements OnInit {
   constructor(private router: Router, private srvPost: PostDataService, private srv: GetDataService) { }
 
   ngOnInit(): void {
+
+    console.log(new Date().toLocaleDateString());
+    
+    
+    
+    
+
     this.srv.idAGrup.subscribe(val=>this.idGrup = val)
     this.srv.nameAGrup.subscribe(val => {
       console.log(val);
@@ -58,6 +65,9 @@ export class PlayComponent implements OnInit {
   }
 
   addPlayerGrup1(player, number) {
+
+    
+    
 
     for (let i = 0; i < this.arrAllPlayers.length; i++) {
       if (this.arrAllPlayers[i][0] === player) {
@@ -236,7 +246,18 @@ export class PlayComponent implements OnInit {
     game.G2P1 = this.pointsPlayersGrup2[0]['player'].id
     game.G2P2 = this.pointsPlayersGrup2[1]['player'].id
     game.G2P3 = this.pointsPlayersGrup2[2]['player'].id
-    game.date = new Date().toLocaleDateString()
+    let tempDate =new Date().toLocaleDateString().split('.')
+    console.log(tempDate);
+    if(tempDate[0].length==1){
+      tempDate[0] = `0${tempDate[0]}`
+    }
+    if(tempDate[1].length==1){
+      tempDate[1] = `0${tempDate[1]}`
+    }
+    let date = `${tempDate[0]}.${tempDate[1]}.${tempDate[2]}`
+    console.log(date);
+    
+    game.date = date
     game.time = `${this.minut}:${this.second}`
     game.resultG1 = this.resultGrup1
     game.resultG2 = this.resultGrup2

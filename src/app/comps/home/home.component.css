@@ -1,3 +1,8 @@
+.cont{
+    background-color: rgba(243, 229, 213, 0.829);
+    height: 100vh;
+}
+
 .all{
     text-align: center;
     justify-content: center;
@@ -17,12 +22,13 @@
 
 .img{
     width: 30%;
+    margin-right: 25%;
 margin-top: 6%;
 
 }
 
 .explain{
-    width: 36%;
+    width: 40%;
 margin-top: 6%;
 margin-right: 5%;
 }
@@ -30,8 +36,8 @@ margin-right: 5%;
 
 .header{
     display: flex;
-    margin-top: 4%;
-    margin-left: 37%;
+    /* margin-top: 4%; */
+    margin-left: 25%;
     color: rgb(248, 92, 20);   
 }
 

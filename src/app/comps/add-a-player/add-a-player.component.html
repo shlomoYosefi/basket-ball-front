@@ -1,7 +1,10 @@
+
+<div class="cont">
+
 <div class="container-sm">
   <form class="form-signin" [formGroup]="addPlayer">
   
-  <div class="container-register-form ">
+  <div class="container-register-form "><br><br><br><br><br><br>
       <div class="form">
   
         <div class="note">
@@ -14,7 +17,7 @@
             <div class="Name">
               <input type="text" #inputName formControlName='name' class="form-control" placeholder=" Name "
                 value="" />
-                <b><span  *ngIf='nameValid()' style="color: red;">{{nameSpan}}</span></b>
+                <b><span  *ngIf='nameValid()' style="font-size: large; color: red; background-color: rgb(202, 191, 189);">{{nameSpan}}</span></b>
 
             </div><br>
   
@@ -22,7 +25,7 @@
               <input type="number" #inputHeight formControlName='Height' class="form-control"
                 placeholder="Height " value="" />
             </div><br>
-            <b><span  *ngIf='heightValid()' style="color: red;">{{heightSpan}}</span></b>
+            <b><span  *ngIf='heightValid()' style="font-size: large; color: red; background-color: rgb(202, 191, 189);">{{heightSpan}}</span></b>
 
             <div>
             <select id="select" #select style="width: 60%; ">
@@ -49,7 +52,7 @@
   <!-- <button style="background: red; border-radius: 50%; width: 25%; height: 250px">click me</button> -->
   
   </div>
-
+</div>
 
 
 

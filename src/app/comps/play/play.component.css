@@ -1,5 +1,10 @@
+.cont{
+    background-color: rgba(243, 229, 213, 0.829);
+    height: 100vh;
+}
+
 .all{
-    margin-top: 3%;
+    /* margin-top: 3%; */
     text-align: center;
     
 }
@@ -7,17 +12,19 @@
 .box{
     display: flex;
 }
+
 img{
     width: 100px;
     height: 100px;
 }
+
 .grup1{
     width: 35%;
 }
+
 .grup2{
     width: 35%;
 }
-
 
 button{
     margin: 2%;

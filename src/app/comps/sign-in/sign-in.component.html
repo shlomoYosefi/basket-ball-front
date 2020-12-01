@@ -1,4 +1,6 @@
-<div class="container-sm">
+<div class="cont">
+
+<div class="container"><br><br><br><br><br>
 <form class="form-signin" [formGroup]="signInFromG">
 
 <div class="container-register-form ">
@@ -14,13 +16,13 @@
           <div class="Name">
             <input type="text" #inputNameGrup formControlName='nameGrup' class="form-control" placeholder="grup name *"
               value="" />
-              <b><span  *ngIf='nameValid()' style="color: red;">{{nameSpan}}</span></b>
+              <b><span  *ngIf='nameValid()' style="font-size: large; color: rgb(255, 3, 3); background-color: rgb(202, 191, 189); width: 10%; height: 5%;">{{nameSpan}}</span></b>
           </div><br>
 
           <div class="form-group">
             <input type="password" #inputPassword formControlName='myPassword' class="form-control"
               placeholder="Your Password *" value="" />
-              <b><span *ngIf='passwordValid()' style="color: red;">{{passwordSpan}}</span></b>
+              <b><span *ngIf='passwordValid()' style="font-size: large; color: red; background-color: rgb(202, 191, 189);">{{passwordSpan}}</span></b>
           </div><br>
 
           <label style="color: seashell;">
@@ -36,4 +38,5 @@
 </form>
 <!-- <button style="background: red; border-radius: 50%; width: 25%; height: 250px">click me</button> -->
 
+</div>
 </div>

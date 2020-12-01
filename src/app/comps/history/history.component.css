@@ -1,10 +1,15 @@
+.cont{
+  background-color: rgba(243, 229, 213, 0.829);
+  height: 100%;
+  min-height: 100vh;
+}
+
 .buttons{
     display: flex;
-    margin-top: 5%;
 }
 
 button{
-    width: 160px;
+    width: 190px;
 }
 
 .dropdown{
