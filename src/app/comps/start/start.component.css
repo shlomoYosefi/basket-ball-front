@@ -1,5 +1,6 @@
 .cont{
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: rgba(243, 229, 213, 0.829);
 }
