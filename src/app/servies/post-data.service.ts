@@ -120,7 +120,7 @@ export class PostDataService {
     console.log(formData);
     let headers = new HttpHeaders().set('id',id) 
 
-    this.http.post(`${this.url}/upload` , formData,{headers}).subscribe() ;  
+    this.http.post(`${this.url}/playrs/upload` , formData,{headers}).subscribe() ;  
   }
 
 
