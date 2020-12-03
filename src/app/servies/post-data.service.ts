@@ -81,8 +81,13 @@ export class PostDataService {
     
     deletePlayer(id) {
       let headers = new HttpHeaders().set("token",this.token) 
-      this.http.delete(`${this.url}/playrs/deletePlayer/${id}`,{headers}).subscribe(() => {
-        this.getPlayers(this.grupId)
+      this.http.delete(`${this.url}/playrs/deletePlayer/${id}`,{headers}).subscribe((val) => {
+        if(val){
+          this.getPlayers(this.grupId)
+          return
+        }
+        alert('There are statistics attached to the player and it is not possible to delete this player')
+        
       })
     }
     
