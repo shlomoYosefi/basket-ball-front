@@ -59,7 +59,7 @@ export class AddAPlayerComponent implements OnInit {
 
     if(this.addPlayer.controls.Height.valid && this.addPlayer.controls.name.valid && this.image!=null && select!=''){
       let id = Math.floor(Math.random() * 1000000000000).toString()
-      let image = `http://localhost:3000/getFile/${id}`
+      let image = `http://localhost:3000/playrs/getFile/${id}`
     this.srvPost.addPlayer(name, height, image, select)
 
     this.srvPost.uploadImage(this.image,id)
