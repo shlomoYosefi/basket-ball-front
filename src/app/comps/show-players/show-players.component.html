@@ -2,13 +2,19 @@
 
 <div class="container" ><br><br><br>
  
-    <h1 style="text-decoration: underline; font-size: 70px; text-align: center;">List of players </h1><br><br>
-    <div class="allCard" >
+    <h1 style="text-decoration: underline; font-size: 70px; text-align: center; color: orangered;">List of players </h1><br><br>
+
+    <div *ngIf= 'notPlayers' style="text-align: center">
+      <p style="font-size: 30px; color: rgb(102, 99, 99);">Please add a player</p>
+    </div>
+
+
+    <div class="allCard"  *ngIf='arr'>
         <div class="wrap" *ngFor='let i of arr'>
             <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img src={{i.image}} style="width:200px;height:230px; ">
+                    <img src={{i.image}}  style="width:200px;height:230px; ">
                   </div>
                   <div class="flip-card-back">
                     <h1 style="text-decoration: underline;">{{i.name}}</h1><br> <br>

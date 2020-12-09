@@ -10,6 +10,7 @@ import { PostDataService } from 'src/app/servies/post-data.service';
 })
 export class HistoryComponent implements OnInit {
 
+  notResults =''
   grup = {}
   idGrup=0
   display = 'display:block;'
@@ -79,6 +80,7 @@ export class HistoryComponent implements OnInit {
   }
 
   resultByGrup(player) {
+    
     if (this.counterOfResultsGrup == 3) {
       return
     }
@@ -177,6 +179,7 @@ export class HistoryComponent implements OnInit {
 
 
   modalDisplay(html, display) {
+    if(this.notResults=='true'){return}
     document.getElementById(html).style.display = display
     if ((html == 'cardFull' && display == 'none') || (html == 'resultByGrup' && display == 'none')) {
       console.log(html);
@@ -187,6 +190,9 @@ export class HistoryComponent implements OnInit {
 
 
   date(date) {    
+    if(this.notResults){
+      return
+    }
     date = date.split('-')
     date = `${date[2]}.${date[1]}.${date[0]}`    
 
@@ -247,6 +253,7 @@ export class HistoryComponent implements OnInit {
     this.srv.getAllResult(this.idGrup).subscribe(val => {
       
       if(val .length>1){
+        this.notResults =''
       let counter = 0
       let arr = []
       for (let i of val) {
@@ -261,13 +268,18 @@ export class HistoryComponent implements OnInit {
       this.arrAllResults.push(arr)
       console.log(this.arrAllResults.length);
 
+      
       let aa = document.getElementById('showTable');
       console.log(aa);
       
       document.getElementById('cardFull').style.display = 'none'
       document.getElementById('resultsGrup').style.display = 'none'
       document.getElementById('showTable').style.display = 'block'
-    }})
+    }
+    if(this.arrAllResults.length==0){
+      this.notResults = 'true'
+    }
+  })
 
     
   

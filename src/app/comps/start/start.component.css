@@ -63,6 +63,8 @@ button{
     width: 20%;
     height: 220px;
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1VzSUtVzobWeSh6O65cuU5Nec8_k_ajPBoA&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
     box-shadow: 5px 10px 8px #888888;
 }
