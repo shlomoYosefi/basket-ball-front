@@ -9,6 +9,7 @@ import { GameDto } from '../DTO/game-dto';
 import { StatisticByPlayerDto } from '../DTO/statisticByPlayer-dto';
 import { MyGurdGuard } from '../my-gurd.guard';
 import { SarveOfGurdService } from '../sarve-of-gurd.service';
+import {environment} from '../../environments/environment'
 
 
 @Injectable({
@@ -17,10 +18,12 @@ import { SarveOfGurdService } from '../sarve-of-gurd.service';
 export class PostDataService {
   
   token  
-  url = 'http://localhost:3000'
+  url = environment.api
   grupId = 0
   
-  constructor(private http: HttpClient, private srvData: GetDataService) {
+  constructor(private http: HttpClient, private srvData: GetDataService ) {
+    console.log("this url is :",this.url);
+    
     this.token = localStorage.getItem("token") 
     if(this.token){
       this.srvData.nameAGrup.next(localStorage.getItem('grup'))
@@ -37,6 +40,8 @@ export class PostDataService {
     const grup: grupDto = new grupDto()
     grup.NameGrup = nameGrup
     grup.Password = password
+    console.log(`${this.url}/playrs/logIn`);
+    
     return this.http.post(`${this.url}/playrs/logIn`, grup).pipe(
       
       map((val) => {
@@ -121,8 +126,6 @@ export class PostDataService {
     console.log(image); 
     let formData = new FormData()
     formData.append('image', image );
-    console.log(id);
-    console.log(formData);
     let headers = new HttpHeaders().set('id',id) 
 
     this.http.post(`${this.url}/playrs/upload` , formData,{headers}).subscribe() ;  

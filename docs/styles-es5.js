@@ -463,7 +463,7 @@
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\stu\Desktop\תרגילים יורי\project-basketball\src\styles.css */
+    /*! C:\Users\stu\Desktop\תרגילים יורי\project-basketball\front-and\src\styles.css */
     "./src/styles.css");
     /***/
   }

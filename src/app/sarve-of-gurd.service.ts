@@ -5,15 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class SarveOfGurdService {
 
-  logIn 
-  constructor() { 
-    this.logIn = localStorage.getItem('gurd')
+  constructor() {  
   }
 
 
-  getLogIn(){   
-    console.log(this.logIn);
+  getLogIn(){  
+    let logIn =  localStorage.getItem('gurd')
+    console.log(logIn);
      
-    return this.logIn
+    return logIn
   }
 }

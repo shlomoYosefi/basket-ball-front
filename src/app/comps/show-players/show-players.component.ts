@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/servies/get-data.service';
 import { PostDataService } from 'src/app/servies/post-data.service';
+import {environment} from 'src/environments/environment'
 
 @Component({
   selector: 'app-show-players',
@@ -8,6 +9,7 @@ import { PostDataService } from 'src/app/servies/post-data.service';
   styleUrls: ['./show-players.component.css']
 })
 export class ShowPlayersComponent implements OnInit {
+  url = `${environment.api}/playrs/getFile/`
   notPlayers = ''
   arr =[]
 

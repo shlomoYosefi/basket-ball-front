@@ -3,6 +3,8 @@ import { GetDataService } from 'src/app/servies/get-data.service';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PostDataService } from 'src/app/servies/post-data.service';
+import {environment} from '../../../environments/environment'
+
 
 @Component({
   selector: 'app-add-a-player',
@@ -11,6 +13,7 @@ import { PostDataService } from 'src/app/servies/post-data.service';
 })
 export class AddAPlayerComponent implements OnInit {
 
+  // url = environment.api
   nameSpan=''
   heightSpan=''
 
@@ -19,7 +22,7 @@ export class AddAPlayerComponent implements OnInit {
   constructor(private srv: GetDataService, private srvPost: PostDataService, private router: Router, private fb: FormBuilder) { }
 
   addPlayer = this.fb.group({
-    name: ['', [Validators.required , Validators.minLength(4)]],
+    name: ['', [Validators.required , Validators.minLength(4), Validators.maxLength(7)]],
     Height: ['', [Validators.required]],
   })
 
@@ -38,7 +41,12 @@ export class AddAPlayerComponent implements OnInit {
        
       else if (this.addPlayer.controls.name.hasError('minlength')){
         this.nameSpan = 'Must be at least 4 characters long' 
-        return 'Must be at least 6 characters long' 
+        return 'Must be at least 4 characters long' 
+      }
+
+      else if (this.addPlayer.controls.name.hasError('maxlength')){
+        this.nameSpan = 'Must have a maximum length of 7 characters' 
+        return 'Must have a maximum length of 7 characters' 
       }
     }
   }
@@ -59,7 +67,9 @@ export class AddAPlayerComponent implements OnInit {
 
     if(this.addPlayer.controls.Height.valid && this.addPlayer.controls.name.valid && this.image!=null && select!=''){
       let id = Math.floor(Math.random() * 1000000000000).toString()
-      let image = `http://localhost:3000/playrs/getFile/${id}`
+      let image = `${id}`
+      // console.log("url-add ", this.url,"image",image);
+      
     this.srvPost.addPlayer(name, height, image, select)
 
     this.srvPost.uploadImage(this.image,id)
@@ -78,10 +88,13 @@ export class AddAPlayerComponent implements OnInit {
     let fileReader = new FileReader() ;
     fileReader.onload = e => {
       this.image = image ;
+      console.log(this.image);
     }  
     fileReader.readAsDataURL(image) ;
     let formData = new FormData()
     formData.append('image', image );
+    
+    
   
   }
 
